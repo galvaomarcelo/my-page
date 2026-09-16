@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // Mobile navigation
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".site-nav");
 
   if (toggle && nav) {
     toggle.addEventListener("click", () => {
       const open = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-expanded", open);
       toggle.innerHTML = open
         ? '<i class="fa-solid fa-xmark"></i>'
         : '<i class="fa-solid fa-bars"></i>';
@@ -20,64 +22,64 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const carousel = document.querySelector("[data-carousel]");
-  if (carousel) {
-    const slides = [...carousel.querySelectorAll(".phone-slide")];
-    const dots = [...carousel.querySelectorAll(".dot")];
-    const prevBtn = carousel.querySelector(".carousel-btn.prev");
-    const nextBtn = carousel.querySelector(".carousel-btn.next");
+
+  // Carousels
+  document.querySelectorAll("[data-carousel]").forEach(carousel => {
     const track = carousel.querySelector(".carousel-track");
+    const slides = [...carousel.querySelectorAll(".carousel-slide")];
+    const dots = [...carousel.querySelectorAll(".dot")];
+    const prev = carousel.querySelector(".carousel-btn.prev");
+    const next = carousel.querySelector(".carousel-btn.next");
+    let index = 0;
 
-    let currentIndex = 0;
+    if (!track || !slides.length) return;
 
-    const showSlide = (index) => {
-      if (!slides.length || !track) return;
-
-      const maxIndex = Math.max(0, slides.length - 1);
-      currentIndex = Math.min(maxIndex, Math.max(0, index));
-
-      const slideWidth = slides[0].getBoundingClientRect().width;
-      const gap = parseFloat(getComputedStyle(track).gap) || 24;
-      const offset = currentIndex * (slideWidth + gap);
-
+    const show = (i, smooth = true) => {
+      index = Math.max(0, Math.min(i, slides.length - 1));
       track.scrollTo({
-        left: offset,
-        behavior: "smooth"
+        left: index * track.clientWidth,
+        behavior: smooth ? "smooth" : "auto"
       });
 
-      slides.forEach((slide, idx) => {
-        slide.classList.toggle("is-active", idx === currentIndex);
-      });
+      slides.forEach((s, i) =>
+        s.classList.toggle("is-active", i === index)
+      );
 
-      dots.forEach((dot, idx) => {
-        dot.classList.toggle("is-active", idx === currentIndex);
-      });
+      dots.forEach((d, i) =>
+        d.classList.toggle("is-active", i === index)
+      );
     };
 
-    prevBtn?.addEventListener("click", () => showSlide(currentIndex - 1));
-    nextBtn?.addEventListener("click", () => showSlide(currentIndex + 1));
+    prev?.addEventListener("click", () => show(index - 1));
+    next?.addEventListener("click", () => show(index + 1));
 
-    dots.forEach(dot => {
-      dot.addEventListener("click", () => showSlide(Number(dot.dataset.slide)));
-    });
+    dots.forEach(dot =>
+      dot.addEventListener("click", () =>
+        show(Number(dot.dataset.slide))
+      )
+    );
 
-    window.addEventListener("resize", () => showSlide(currentIndex));
-    showSlide(0);
-  }
+    window.addEventListener("resize", () => show(index, false));
+    show(0, false);
+  });
 
+
+  // Current year
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  // Hide the video placeholder after a video is loaded.
+
+  // Video placeholders
   document.querySelectorAll(".video-frame video").forEach(video => {
-    const placeholder = video.parentElement.querySelector(".video-placeholder");
+    const placeholder =
+      video.parentElement.querySelector(".video-placeholder");
+
     if (!placeholder) return;
 
-    const hidePlaceholder = () => {
-      placeholder.style.opacity = "0";
-    };
+    const hide = () => placeholder.style.opacity = "0";
 
-    video.addEventListener("loadeddata", hidePlaceholder);
-    video.addEventListener("play", hidePlaceholder);
+    video.addEventListener("loadeddata", hide);
+    video.addEventListener("play", hide);
   });
+
 });
