@@ -132,6 +132,150 @@
         </div>
 
         <div class="project-grid">
+
+<article class="project-card project-featured">
+
+  <div class="project-body">
+
+    <h3>Cattle-Vision</h3>
+
+    <div class="project-label">
+      Projeto de GeoIA · Visão Computacional
+      <a href="https://github.com/galvaomarcelo/cattle-vision"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="GitHub Cattle-Vision">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
+
+    <p>
+      Um sistema de Visão Computacional e GeoIA que transforma imagens
+      captadas por drones em informações sobre o rebanho. Combinando
+      Deep Learning, metadados da câmera e análise geoespacial, o projeto
+      busca automatizar o inventário e o monitoramento de bovinos em
+      propriedades rurais.
+    </p>
+
+    <ul class="project-features">
+      <li>
+        <i class="fa-solid fa-eye"></i>
+        <span>
+          <strong>Detecção automática:</strong>
+          identificação de bovinos em imagens aéreas usando modelos
+          de visão computacional.
+        </span>
+      </li>
+
+      <li>
+        <i class="fa-solid fa-map-location-dot"></i>
+        <span>
+          <strong>Georreferenciamento:</strong>
+          estimativa da localização dos animais a partir das imagens,
+          da orientação da câmera e dos dados de elevação do terreno.
+        </span>
+      </li>
+
+      <li>
+        <i class="fa-solid fa-chart-pie"></i>
+        <span>
+          <strong>Análise do rebanho:</strong>
+          responda perguntas como - Quantos animais existem
+          em um pasto? Qual é a densidade de animais por área?
+        </span>
+      </li>
+
+      <li>
+        <i class="fa-solid fa-cow"></i>
+        <span>
+          <strong>Aplicações futuras:</strong>
+          classificação por categorias, como bezerros, vacas e touros,
+          para apoiar o acompanhamento do rebanho.
+        </span>
+      </li>
+    </ul>
+
+    <div class="project-tags">
+      <span>Python</span>
+      <span>YOLO</span>
+      <span>Deep Learning</span>
+      <span>GeoAI</span>
+      <span>GIS</span>
+      <span>Drone</span>
+    </div>
+
+  </div>
+
+  <div class="project-showcase"
+       data-carousel
+       aria-label="Demonstração do Cattle-Vision">
+
+    <div class="carousel-track">
+
+      <div class="carousel-slide is-active">
+        <div class="slide-label">
+          1. Imagens aéreas captadas por drone
+        </div>
+        <img src="assets/raw2.jpg"
+             alt="Imagem aérea original da propriedade rural">
+      </div>
+
+      <div class="carousel-slide">
+        <div class="slide-label">
+          2. Detecção de bovinos com visão computacional
+        </div>
+        <img src="assets/yolodetection2.jpg"
+             alt="Bovinos detectados automaticamente em imagem aérea">
+      </div>
+
+      <div class="carousel-slide">
+        <div class="slide-label">
+          3. Geolocalização dos bovinos no mapa do seu aplicativo
+        </div>
+        <img src="assets/geolocalization3.jpg.png"
+             alt="Resultado do processamento de imagens de drone">
+      </div>
+
+      <div class="carousel-slide">
+        <div class="slide-label">
+          4. Método de geolocalização desenvolvido para o projeto Cattle-Vision
+        </div>
+        <img src="assets/metodogeolocalizacao.png"
+             alt="Visualização geoespacial do projeto Cattle-Vision">
+      </div>
+
+    </div>
+
+    <div class="carousel-controls">
+      <button class="carousel-btn prev"
+              type="button"
+              aria-label="Slide anterior">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <button class="carousel-btn next"
+              type="button"
+              aria-label="Próximo slide">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="carousel-dots" aria-label="Seletor de slides">
+      <button class="dot is-active" type="button"
+              data-slide="0" aria-label="Ir para slide 1"></button>
+      <button class="dot" type="button"
+              data-slide="1" aria-label="Ir para slide 2"></button>
+      <button class="dot" type="button"
+              data-slide="2" aria-label="Ir para slide 3"></button>
+      <button class="dot" type="button"
+              data-slide="3" aria-label="Ir para slide 4"></button>
+    </div>
+
+  </div>
+
+</article>
+
+
           <article class="project-card project-featured">
                         <div class="project-body">
               
@@ -238,114 +382,8 @@
 
           </article>
 
-          <article class="project-card">
-            <div class="project-body">
-           
-              <h3>Cattle-Vision</h3>
-              <div class="project-label">Trabalho do momento<a href="https://github.com/galvaomarcelo/cattle-vision" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></div>
-              <p>O Cattle-Vision é um sistema de Visão Computacional / GeoIA voltado para a detecção e classificação de gado em imagens captadas por drones sobre uma fazenda rural de gado.</p>
-              <p> O sistema utiliza imagens aéreas, informações geoespaciais e Deep Learning para auxiliar no inventário e no monitoramento automatizados do gado e dos pastos.</p>              
-              <p>Com esse sistema, o produtor poderá saber em poucas hora a localização exata dos animais. E responter perguntas no tipo "Quantos bezerros nasceram naquele lote?" ou Qual a proporçãos de animais por alqueire naquele pasto?" </p>
-              <div class="project-tags"><span>Python</span><span>Visão Computacional</span><span>Sensoriamento Remoto</span><span>GIS</span></div>
-            </div>
-            <div class="project-showcase" data-carousel aria-label="Drone & Visão Computacional">
 
-              <div class="carousel-track">
-
-                <div class="carousel-slide is-active">
-                  <img
-                    src="assets/detection1.jpg"
-                    alt="Imagem aérea da propriedade">
-
-                  <div class="slide-label">
-                    Resultados do modelo de contagem
-                  </div>
-                </div>
-
-
-                <div class="carousel-slide">
-                  <img
-                    src="assets/detection2.jpg"
-                    alt="Detecção de objetos por visão computacional">
-
-                  <div class="slide-label">
-                    Detecção e classificação automática
-                  </div>
-                </div>
-
-
-                <div class="carousel-slide">
-                  <img
-                    src="assets/detection3.jpg"
-                    alt="Mapa gerado a partir de imagens de drone">
-
-                  <div class="slide-label">
-                    Resultados do modelo de contagem
-                  </div>
-                </div>
-
-
-                <div class="carousel-slide">
-                  <img
-                    src="assets/detection4.jpg"
-                    alt="Análise de dados geoespaciais">
-
-                  <div class="slide-label">
-                    Integração com dados geoespaciais
-                  </div>
-                </div>
-
-              </div>
-
-
-              <div class="carousel-controls">
-
-                <button
-                  class="carousel-btn prev"
-                  type="button"
-                  aria-label="Slide anterior">
-                  <i class="fa-solid fa-chevron-left"></i>
-                </button>
-
-                <button
-                  class="carousel-btn next"
-                  type="button"
-                  aria-label="Próximo slide">
-                  <i class="fa-solid fa-chevron-right"></i>
-                </button>
-
-              </div>
-
-
-              <div class="carousel-dots" aria-label="Seletor de slides">
-
-                <button class="dot is-active"
-                        type="button"
-                        data-slide="0"
-                        aria-label="Ir para slide 1"></button>
-
-                <button class="dot"
-                        type="button"
-                        data-slide="1"
-                        aria-label="Ir para slide 2"></button>
-
-                <button class="dot"
-                        type="button"
-                        data-slide="2"
-                        aria-label="Ir para slide 3"></button>
-
-                <button class="dot"
-                        type="button"
-                        data-slide="3"
-                        aria-label="Ir para slide 4"></button>
-
-              </div>
-
-            </div>
-
-          </article>
-
-          <article class="project-card">
+          <article class="project-card project-featured">
 
             <div class="project-body">
 
@@ -488,8 +526,8 @@
     <section class="section section-muted" id="experience">
   <div class="container">
     <div class="section-kicker">03 — Experiência Profissional</div>
-    <h2>Experiência em pesquisa, mentalidade de engenharia.</h2>
-
+    <!--<h2>Experiência em pesquisa, mentalidade de engenharia.</h2>-->
+    
     <div class="timeline">
       <article class="timeline-item">
         <div class="timeline-date">2022 — 2024</div>
@@ -506,6 +544,7 @@
         <img src="assets/geoar3.jpg" alt="Apresentação do framework GeoAR para alunos" loading="lazy">
         <figcaption>Apresentação do framework GeoAR para alunos.</figcaption>
       </figure>
+      
 
       <article class="timeline-item">
         <div class="timeline-date">2016 — 2021</div>
@@ -524,7 +563,7 @@
         <img src="assets/experience2.jpg" alt="Protótipo de sistema de navegação do projeto WayTO" loading="lazy">
         <figcaption>Projeto de Pesqisa WayTO. a) Modelo 3D de cidade criado com CityEngine e SketchUp. b) Montagem de hardware do simulador de direção. c) Um usuário navegando no ambiente virtual enquanto utiliza o protótipo do sistema de navegação no tablet. Imagem de <a href="https://doi.org/10.1016/j.geus.2021.100456" target="_blank" rel="noopener noreferrer">Galvao at al. (2021)</a></figcaption>
       </figure>
-
+      
       <article class="timeline-item">
         <div class="timeline-date">2012 — 2014</div>
         <div>
